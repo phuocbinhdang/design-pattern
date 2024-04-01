@@ -4,13 +4,13 @@ from abc import ABC, abstractmethod
 class Drink(ABC):
     @abstractmethod
     def drink(self):
-        pass
+        raise NotImplementedError()
 
 
 class Food(ABC):
     @abstractmethod
     def eat(self):
-        pass
+        raise NotImplementedError()
 
 
 class Voucher(Drink, Food):
@@ -51,11 +51,11 @@ class GrilledOctopus(Food):
 class VoucherAbstractFactory(ABC):
     @abstractmethod
     def get_drink(self) -> Drink:
-        pass
+        raise NotImplementedError()
 
     @abstractmethod
     def get_food(self) -> Food:
-        pass
+        raise NotImplementedError()
 
 
 class MorningVoucherFactory(VoucherAbstractFactory):

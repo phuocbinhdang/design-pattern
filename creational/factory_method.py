@@ -4,11 +4,11 @@ from abc import ABC, abstractmethod
 class Notifier(ABC):
     @abstractmethod
     def set_destination(destination: str):
-        pass
+        raise NotImplementedError()
 
     @abstractmethod
     def send(message: str):
-        pass
+        raise NotImplementedError()
 
 
 class EmailNotifier(Notifier):
