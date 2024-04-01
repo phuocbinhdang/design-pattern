@@ -3,17 +3,17 @@ from abc import ABC, abstractmethod
 
 class Notifier(ABC):
     @abstractmethod
-    def send(message: str) -> None:
+    def send(message: str):
         pass
 
 
 class EmailNotifier(Notifier):
     _email: str
 
-    def __init__(self, email) -> None:
+    def __init__(self, email):
         self._email = email
 
-    def send(self, message: str) -> None:
+    def send(self, message: str):
         print("Sending Notification")
         print(f"Email: {self._email}")
         print(f"{message}")
@@ -22,10 +22,10 @@ class EmailNotifier(Notifier):
 class SMSNotifier(Notifier):
     _phone_number: str
 
-    def __init__(self, phone_number) -> None:
+    def __init__(self, phone_number):
         self._phone_number = phone_number
 
-    def send(self, message: str) -> None:
+    def send(self, message: str):
         print("Sending Notification")
         print(f"Phone number: {self._phone_number}")
         print(f"{message}")
@@ -34,10 +34,10 @@ class SMSNotifier(Notifier):
 class BanAccountService:
     _notifier: Notifier
 
-    def __init__(self, notifier) -> None:
+    def __init__(self, notifier):
         self._notifier = notifier
 
-    def execute(self, reason) -> None:
+    def execute(self, reason):
         message: str = f"Message: You are baned\nReason: {reason}"
         self._notifier.send(message)
 
