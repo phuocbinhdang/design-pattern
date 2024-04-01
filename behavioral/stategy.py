@@ -46,11 +46,9 @@ if __name__ == "__main__":
     service: BanAccountService = BanAccountService(
         notifier=EmailNotifier(email="you@example.com")
     )
-
     service.execute("Used 3rd party software")
 
     service: BanAccountService = BanAccountService(
         notifier=SMSNotifier(phone_number="0123456789")
     )
-
     service.execute("Used 3rd party software")

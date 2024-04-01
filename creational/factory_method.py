@@ -63,5 +63,4 @@ if __name__ == "__main__":
     notifier.set_destination("0123456789")
 
     service: BanAccountService = BanAccountService(notifier=notifier)
-
     service.execute("Used 3rd party software")
